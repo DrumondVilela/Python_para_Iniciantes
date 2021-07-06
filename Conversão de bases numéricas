@@ -1,0 +1,17 @@
+print ('-'*75 + "Bem vindo(a)!" + '-'*75)
+#Choice of number to be converted:
+res = int(input('Digite um número inteiro para saber sua forma nas bases binária, octal ou hexadecimal: '))
+#User convertion choice:
+choice = int(input ('Escolha uma opção de conversão de base: [1] - Binário; [2] - Octal; [3] - Hexadecimal: '))
+#If binary:
+if (choice == 1) :
+    print ('O número digitado ({}) em base binária é igual a {}.'.format(res, bin(res)[2:]))
+#If octal:
+elif (choice == 2):
+    print ('O número digitado ({}) em base octal é igual a {}.'.format(res, oct(res)[2:]))
+#If hexadecimal:
+elif (choice == 3):
+    print ('O número digitado ({}) em base hexadecimal é igual a {}.'.format(res, hex(res)[2:]))
+else:
+    print('[ERRO] Opção inválida. Por favor, tente novamente.')
+print ('-'*80 + "FIM" + '-'*80)
