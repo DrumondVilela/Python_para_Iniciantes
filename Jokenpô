@@ -1,17 +1,23 @@
 from random import randint
-#Computer's choice:
-cc = int(randint(1,3))
-#User's choice:
-uc = int(input('[1] - Pedra; [2] - Papel; [3] - Tesoura: '))
-if uc == cc:
-    print ('Empate')
-elif cc > uc or cc == 1 and uc == 3:
-    print ('O computador ganhou!')
-elif (uc > 3 or uc < 1):
-    print ('[ERRO] Número inválido. Por favor, tente novamente.')
+print ('='*15 + ' VAMOS JOGAR JOKENPÔ ' + '='*15)
+itens = ('Pedra', 'Papel', 'Tesoura')
+print  ('OPÇÕES:\n[0] - Pedra\n[1] - Papel\n[2] - Tesoura')
+#Escolha do usuário:
+user = int(input('Digite a sua escolha: '))
+#Escolha da máquina:
+mach = randint(0,2)
+print ('A máquina escolheu {}.'.format(itens[mach]))
+print ('O usuário escolheu {}'.format(itens[user]))
+print('='*20 + 'JO-KEN-PÔ!' + '='*20)
+if user == mach:
+    print ('EMPATE!!')
+elif mach > user or mach == 0 and user == 2:
+    print ('A MÁQUINA GANHOU!!')
+elif user > mach or user == 0 and mach == 2:
+    print ('VOCÊ VENCEU!!')
 else:
-    print ('Você ganhou!')
-print (cc)
-#Empate: 2/2; 3/3; 1/1
+    print ('[ERROR]')
+print ('='*15 + ' OBRIGADO POR JOGAR ' + '='*15)
+#Empate: 0/0; 1/1; 2/2
 #Computador ganha: se cc > uc ou cc == 1 e uc == 3
 #Usuário ganha: se uc > cc ou uc == 1 e cc == 3
