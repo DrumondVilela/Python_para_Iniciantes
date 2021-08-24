@@ -1,0 +1,45 @@
+# Importação de bibliotecas necessárias:
+from random import randint
+from emoji import emojize
+
+# Atribuições iniciais:
+smile = emojize(':grinning_face:')
+glass = emojize(':smiling_face_with_sunglasses:')
+angry = emojize(':angry_face:')
+laugh = emojize(':face_with_tears_of_joy:')
+celebrate = emojize(':party_popper:')
+medal = emojize(':1st_place_medal:')
+eyes = emojize(':eyes:')
+cry = emojize(':loudly_crying_face:')
+
+# Apresentação das regras do jogo:
+
+print('-'*100)
+print('Bem vindo(a) ao \"Adivinhe o Número\"!', smile)
+print('Fique esperto que agora lhe direi as regras! Vamos lá:\n1. Você terá seis chances para acertar o número que estou pensando;\n2. Ao longo do jogo irei lhe dando dicas para saber se está acima ou abaixo da resposta;\n3. Se você acertar, vence, caso contrário, eu venço.',glass)
+
+# Escolha do computador:
+
+computer_choice = randint(1,20)
+print('Eu já fiz minhas apostas, agora é a sua vez!', eyes)
+
+# Escolha do usuário:
+
+while True:
+    for i in range(1,6):
+        user_choice = int(input('Escolha um número inteiro entre 1 e 20: '))
+        if user_choice < 1 or user_choice > 20:
+            print('Eu disse entre 1 e 20, paspalho!',angry)
+        elif user_choice == computer_choice:
+            print('Não acredito! Você acertou!!',cry)
+            print(celebrate,'PARABÉNS VENCEDOR!!!', medal, celebrate)
+            break
+        elif user_choice > computer_choice:
+            print('Quase! Um pouco menor...')
+        elif user_choice < computer_choice:
+            print('Quase! Um pouco maior...')
+    break
+if user_choice != computer_choice:
+    print('Acabaram as chances e você perdeu!', laugh)
+    print('Sabia que eu era melhor.', glass)
+print('-'*100)
