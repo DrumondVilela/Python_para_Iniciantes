@@ -1,0 +1,47 @@
+# Importação de bibliotecas necessárias e atribuições iniciais:
+from emoji import emojize
+smile = emojize(':grinning_face:')
+crying = emojize(':loudly_crying_face:')
+angry = emojize(':angry_face:')
+
+# Apresentação:
+print('-'*100)
+print('Bem vindo(a) à plataforma!\nDigite a seguir o que deseja:\n[1] - Soma de dois números\n[2] - Multiplicação de dois números\n[3] - Mostrar o maior entre dois números\n[4] - Sair do programa. ')
+while True:
+    choice = int(input('Digite a opção desejada: '))
+    # Soma:
+    if choice == 1:
+        sum1 = int(input('Digite o primeiro valor : '))
+        sum2 = int(input('Digite o segundo valor: '))
+        sumTot = sum1 + sum2
+        print(f'A soma entre {sum1} e {sum2} é igual a {sumTot}.',smile)
+        
+    # Multiplicação:    
+    elif choice == 2:
+        mult1 = int(input('Digite o primeiro valor: '))
+        mult2 = int(input('Digite o segundo valor: '))
+        multTot = mult1*mult2
+        print(f'A multiplicação entre {mult1} e {mult2} é igual a {multTot}.', smile)
+        
+    # Maior:    
+    elif choice == 3:
+        maior = 0
+        n1 = int(input('Digite o primeiro valor: '))
+        n2 = int(input('Digite o segundo valor: '))
+        if n1 > n2:
+            maior = n1
+        else:
+            maior = n2
+        print(f'O maior número entre {n1} e {n2} é {maior}.', smile)
+        
+    # Saída:    
+    elif choice == 4:
+        print('Você tem certeza que quer sair da plataforma ? ', crying)
+        saida = str(input('Sua resposta [S/N]: '))
+        if saida in 'Ss':
+            print('Adeus então!', angry)
+            break            
+        else:
+            print('Eba! Vamos voltar então.', smile)
+print('FIM DO PROGRAMA')
+print('-'*100)
