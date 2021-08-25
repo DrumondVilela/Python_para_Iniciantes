@@ -1,0 +1,48 @@
+# Importação de bibliotecas:
+from matplotlib import pyplot as plt
+from numpy import inf
+
+# Atribuição de valores às listas:
+codigo = [ 1, 2, 3, 5, 9]
+preco = [0.5, 1, 4, 7, 8]
+
+# Características visuais do gráfico:
+plt.plot(codigo, preco, color = 'red', marker = 'o', linestyle = 'solid')
+
+# Dá um título ao gráfico:
+plt.title('Registros')
+
+# Adiciona um selo no eixo x e y:
+plt.ylabel('Preços')
+plt.xlabel('Códigos')
+plt.show()
+
+tot = 0
+print('Digite um código para prosseguir:\n[1] - R$0,50\n[2] - R$1,00\n[3] - R$4,00\n[5] - R$7,00\n[9] - R$8,00\n[0] - Sair do programa')
+
+# Laço de repetição: 
+while True:
+    choice = int(input('Sua escolha: '))
+    if choice == 1:
+        n = int(input('Digite o número de produtos do mesmo código que irá comprar: '))
+        tot += 0.5*n
+    elif choice == 2:
+        n = int(input('Digite o número de produtos do mesmo código que irá comprar: '))
+        tot += 1*n
+    elif choice == 3:
+        n = int(input('Digite o número de produtos do mesmo código que irá comprar: '))
+        tot += 4*n
+    elif choice == 5:
+        n = int(input('Digite o número de produtos do mesmo código que irá comprar: '))
+        tot += 7*n
+    elif choice == 9:
+        n = int(input('Digite o número de produtos do mesmo código que irá comprar: '))
+        tot += 8*n
+    elif choice == 0:
+        print('Total a pagar R${:.2f}.'.format(tot))
+        print('Obrigado por usar a plataforma \'Urso Manco\'!')
+        break
+    else: 
+        print('[ERRO] Código Inválido! Tente novamnte.')
+
+print('FIM')
