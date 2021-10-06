@@ -1,0 +1,250 @@
+# Definindo funções locais:
+
+# A função mostra o cardápio durante a execução do programa quando necessário:
+
+def ver_cardapio():
+  print('''
+    ------ Lanches ------            |           ------ Bebidas ------
+    N°1  X-BURGER  10.00             |  N° 12 - FANTA 2L  7.00
+    N°2  X-EGG  8.00                 |  N° 13 - COCA COLA 2L  8.00
+    N°3  X-SALADA  12.00             |  N° 14 - GUARANA DOLLY  6.00
+    N°4  X-BACON  14.00              |  N° 15 - REFRIGERANTE LATA  4.00
+    N°5  BAURU  6.00                 |  N° 16 - MILK SHAKE  6.00
+    N°6  HOT-DOG  8.00               |  N° 17 - SUCO DE LARANJA 1.5L  8.00
+    N°7  CARNE LOUCA  10.00          |  N° 18- SUCO DE GARRAFINHA 600ml  4.00
+    N°8  CARNE LOUCA C/QUEIJO  12.00 |  N° 19 - CERVEJA LATA  3.00
+    N°9  COMPLETÃO  16.00            |  N° 20 - CERVEJA 1L  10.00
+    N°10 BATATA FRITA RUSTICA  15.00 |
+    ''')
+
+
+# A função retorna os itens que o usuário possui no carrinho no momento que for chamada:
+
+def ver_carrinho():
+  print(f'Seu carrinho:\n{carrinho}')
+
+
+# Declaração inicial das variáveis necessárias à execução do programa:
+carrinho = []
+total = 0
+nota50 = 0
+nota20 = 0
+nota10 = 0
+nota5 = 0
+nota2 = 0
+moeda = 0
+
+# Mensagem de introdução para o usuário:
+print ('''
+Olá! Seja bem-vindo(a) ao Código Burguer 🍟🍔
+Posso anotar o seu pedido ? 😁
+''')
+
+# Escolha do usuário para entrar no programa:
+entrada = input('Escolha uma opção:\n[A] - Acessar o programa\n[F] - Sair do programa\nSua escolha:')
+while entrada.upper().strip() != 'A' and entrada.upper().strip() != 'F':
+  entrada = input('VALOR INVÁLIDO.TENTE NOVAMENTE.\nEscolha uma opção:\n[A] - Acessar o programa\n[F] - Sair do programa\nSua escolha: ')
+if entrada.upper().strip() == 'A':
+  print(f'Navegue na maionese: ')
+
+  # Chama a função para apresentar o cardápio:
+  ver_cardapio()
+
+  # Escolha do usuário para direcionamento do próximo bloco:
+  direcionamento = input('[A] - Adicionar itens ao carrinho\n[F] - Sair\n[C] - Ver carrinho\nSua escolha: ')
+  while direcionamento.upper().strip() != 'A' and direcionamento.upper().strip() != 'F' and direcionamento.upper().strip() != 'C':
+    direcionamento = input('VALOR INVÁLIDO. TENTE NOVAMENTE\n[A] - Adicionar itens ao carrinho\n[F] - Sair\n[C] - Ver carrinho\nSua escolha: ')
+  while direcionamento.upper().strip() == 'A':
+    escolha_pedido = input('Digite o número do item que deseja adicionar ao carrinho:\n[F] - Para sair\n[C] - Para ver o carrinho\n[P] - Para efetuar o pagamento\nSua escolha: ')
+
+    # Atribuição dos itens escolhidos ao carrinho e somatório do valor total a ser pago por cada item:
+    if escolha_pedido == '1':
+      carrinho.append('X-BURGUER')
+      total += 10
+      print('Você adicionou X-BURGUER\n')
+  
+    elif escolha_pedido == '2':
+      carrinho.append('X-EGG')
+      total += 8
+      print('Você adicionou X-EGG\n')
+
+    elif escolha_pedido == '3':
+      carrinho.append('X-SALADA')
+      total += 12
+      print('Você adicionou X-SALADA\n')
+
+    elif escolha_pedido == '4':
+      carrinho.append('X-BACON')
+      total += 14
+      print('Você adicionou X-BACON\n')
+
+    elif escolha_pedido == '5':
+      carrinho.append('BAURU')
+      total += 6
+      print('Você adicionou BAURU\n')
+
+    elif escolha_pedido == '6':
+      carrinho.append('HOT-DOG')
+      total += 8
+      print('Você adicionou HOT-DOG\n')
+
+    elif escolha_pedido == '7':
+      carrinho.append('CARNE-LOUCA')
+      total += 10
+      print('Você adicionou CARNE-LOUCA\n')
+
+    elif escolha_pedido == '8':
+      carrinho.append('CARNE-LOUCA C/ QUEIJO')
+      total += 12
+      print('Você adicionou CARNE-LOUCA COM QUEIJO\n')
+
+    elif escolha_pedido == '9':
+      carrinho.append('COMPLETAO')
+      total += 16
+      print('Você adicionou COMPLETÃO\n')
+
+    elif escolha_pedido == '10':
+      carrinho.append('BATATA FRITA RUSTICA')
+      total += 15
+      print('Você adicionou BATATA FRITA RÚSTICA\n')
+
+    elif escolha_pedido == '11':
+      carrinho.append('AGUA BONAFONT 1L')
+      total += 2
+      print('Você adicionou ÁGUA BONAFONT 1L\n')
+
+    elif escolha_pedido == '12':
+      carrinho.append('FANTA 2L')
+      total += 7
+      print('Você adicionou FANTA 2L\n')
+
+    elif escolha_pedido == '13':
+      carrinho.append('COCA COLA 2L')
+      total += 8
+      print('Você adicionou COCA COLA 2L\n')
+
+    elif escolha_pedido == '14':
+      carrinho.append('GUARANÁ DOLLY')
+      total += 6
+      print('Você adicionou GUARANÁ DOLLY\n')
+
+    elif escolha_pedido == '15':
+      carrinho.append('REFRIGERANTE LATA')
+      total += 4
+      print('Você adicionou REFRIGERANTE LATA\n')
+
+    elif escolha_pedido == '16':
+      carrinho.append('MILK SHAKE')
+      total += 6
+      print('Você adicionou MILK SHAKE\n')
+
+    elif escolha_pedido == '17':
+      carrinho.append('SUCO DE LARANJA 1,5L')
+      total += 8
+      print('Você adicionou SUCO DE LARANJA 1,5L\n')
+
+    elif escolha_pedido == '18':
+      carrinho.append('SUCO DE GARRAFINHA 600ml')
+      total += 4
+      print('Você adicionou SUCO DE GARRAFINHA 600ml\n')
+
+    elif escolha_pedido == '19':
+      carrinho.append('CERVEJA LATA')
+      total += 3
+      print('Você adicionou CERVEJA LATA\n')
+
+    elif escolha_pedido == '20':
+      carrinho.append('CERVEJA 1L')
+      total += 10
+      print('Você adicionou CERVEJA 1L\n') 
+
+    elif escolha_pedido.upper().strip() == 'C':
+      ver_carrinho()
+      print(f'TOTAL A PAGAR: R${total:.2f}\n')
+
+    elif escolha_pedido.upper().strip() == 'P':
+      print('----- ÁREA DE PAGAMENTO -----\n')
+      print(f'TOTAL A PAGAR: R${total:.2f}\n')
+      
+      # Laço de repetição para garantir o valor do input do usuário: 
+      while True:
+        try:
+          forma_pag = int(input('Escolha uma forma de pagamento:\n[1] - Dinheiro\n[2] - Cartão\nSua escolha: '))
+        except:
+          print('VALOR INVÁLIDO\n')
+          continue
+        break
+
+
+      # Opção de pagamento com cartão escolhida(não gera troco):
+      if forma_pag == 2:
+        print('PAGAMENTO EFETUADO COM CARTÃO')
+        print(f'Foram gastos R${total:.2f} na loja.\nVocê comprou {carrinho}\nObrigado por comprar no Código Burguer. Volte Sempre! 🍟🍔😁')
+        break
+
+      # Opção de pagamento com dinheiro escolhida:
+      valor_pag = int(input('Com quanto irá pagar:'))
+
+      while valor_pag < total:
+        valor_pag = int('VALOR INSUFICIENTE. Digite novamente o valor: ')
+
+      troco = valor_pag - total
+
+      # Emissão das notas de troco:
+      while troco != 0:
+          while troco//50 > 0:
+              troco -= 50
+              nota50 += 1
+          while troco//20 > 0:
+              troco -= 20
+              nota20 += 1
+          while troco//10 > 0:
+              troco -= 10
+              nota10 += 1
+          while troco//5 > 0:
+              troco -= 5
+              nota5 += 1
+          while troco//2 > 0:
+              troco -= 2
+              nota2 += 1
+          while troco > 0:
+              moeda = troco
+              troco -= 1
+
+      # As notas de troco só irão aparecer caso o troco seja diferente da valor pago pelo usuário: 
+      if valor_pag != total:
+        print('Seu troco é:\n')
+        if nota50 > 0:
+          print(f'{nota50} nota(s) de cinquenta reais\n')
+        if nota20 > 0:
+          print(f'{nota20} nota(s) de vinte reais\n')
+        if nota10 > 0:
+          print(f'{nota10} nota(s) de dez reais\n')
+        if nota5 > 0:
+          print(f'{nota5} nota(s) de cinco reais\n')
+        if nota2 > 0:
+          print(f'{nota2} nota(s) de dois reais\n')
+        if moeda > 0:
+          print(f'{moeda} moeda(s) de um real.\n')
+
+        print(f'PAGAMENTO EFETUADO\nForam gastos R${total:.2f} na loja.\nVocê comprou {carrinho}\nObrigado por comprar no Código Burguer. Volte Sempre! 🍟🍔😁')
+        break
+      else:
+        print(f'PAGAMENTO EFETUADO\nForam gastos R${total:.2f} na loja.\nVocê comprou {carrinho}\nObrigado por comprar no Código Burguer. Volte Sempre! 🍟🍔😁')
+        break
+
+    # Confirmação de saída do programa:
+    elif escolha_pedido.upper().strip() == 'F':
+      print(f'Seu carrinho atual: {carrinho}\nVocê irá perder todo o conteúdo do carrinho!')
+      resposta = input('Tem certeza que quer cancelar o pedido?\nDigite [S] para SIM ou [N] para NÃO: ')
+      while resposta.upper().strip() != "S" and resposta.upper().strip() != "N":
+        resposta = input('VALOR INVÁLIDO.\nTem certeza que quer cancelar o pedido?\nDigite [S] para SIM ou [N] para NÃO: ')
+      if resposta.upper().strip() == "S":
+        print("Pedido cancelado! Volte sempre 😁") 
+        break
+    
+    # Garante o retorno do input caso seja digitado algo inválido:
+    else: 
+      escolha_pedido = input('VALOR INVÁLIDO. TENTE NOVAMENTE.\n Digite o número do item que deseja adicionar:\n[F] - Para sair\n[C] - Para ver o carrinho\n[P] - Para efetuar o pagamento\nSua escolha: \n')
+else:
+  print('Pena que não continuará o processo\nVolte sempre que quiser 😁')
