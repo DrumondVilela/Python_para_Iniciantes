@@ -20,3 +20,4 @@ Python é uma linguagem de programação de alto nível — ou High Level Langua
     <li>Como utilizar a estrutura Try/Except.</li>
 </ul>
 <p>E lembre-se: <ita><strong>O sucesso é a soma de pequenos esforços diários !</strong></ita></p>
+<a href="https://docs.python.org/pt-br/3/" target="_blank" rel="external">DOCUMENTAÇÃO OFICIAL</a>
